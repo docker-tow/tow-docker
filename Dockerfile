@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 COPY run_tow.sh run_tow.sh
 
-RUN pip install -q --pre -I tow==1.0.2a0 && \
+RUN pip install -q --pre -I tow && \
     chmod +x run_tow.sh
 
 RUN mkdir /root/.ssh && \
