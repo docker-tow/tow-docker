@@ -1,6 +1,7 @@
 FROM debian:jessie
 MAINTAINER Nikolay Yurin <yurinnick@outlook.com>
 
+
 ENV GIT_BRANCH master
 
 RUN apt-get update && \
@@ -10,7 +11,7 @@ RUN apt-get update && \
 
 COPY run_tow.sh run_tow.sh
 
-RUN pip install -q --pre -I tow==1.0.2a0 && \
+RUN pip install -q --pre -I "tow>=1.0.2a0,<1.0.0" && \
     chmod +x run_tow.sh
 
 RUN mkdir /root/.ssh && \
