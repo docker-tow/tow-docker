@@ -23,6 +23,8 @@ docker build -t "$USER/tow" .
 
 Tow image requires mounting docker socket to work with docker installation from the container. Use `-v /var/run/docker.sock:/var/run/docker.sock` option when run it. 
 
+By default `tow` image includes `docker-client 1.5.0`, if you need another version, specify it `-e DOCKER_VERSION=<version>`
+
 #### Local projects
 
 Mount project directory into `/workspace` volume and run required action:
