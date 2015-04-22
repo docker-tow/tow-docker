@@ -5,8 +5,10 @@ ENV GIT_BRANCH master
 
 RUN apt-get update && \
     apt-get install -y python python-pip curl git && \
-    curl -sSL https://get.docker.com | sh && \
     apt-get clean -y
+
+ADD https://get.docker.com/builds/Linux/x86_64/docker-1.5.0 /usr/local/bin/docker
+RUN chmod +x /usr/local/bin/docker
 
 COPY run_tow.sh run_tow.sh
 
