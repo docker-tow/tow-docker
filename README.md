@@ -14,8 +14,8 @@ docker pull yurinnick/tow
 Alternately you can build the image locally.
 
 ```
-git clone https://github.com/alekseiko/tow
-cd docker
+git clone https://github.com/yurinnick/tow-docker
+cd tow-docker
 docker build -t "$USER/tow" .
 ```
 
@@ -29,7 +29,7 @@ Mount project directory into `/workspace` volume and run required action:
 
 ```
 $ docker run -v /var/run/docker.sock:/var/run/docker.sock \
--v $(pwd):/workspace tow <parameters>
+-v $(pwd):/workspace yurinnick/tow <parameters>
 ```
 
 #### Remote projects
@@ -41,12 +41,12 @@ Remember to mount volume with ssh keys to `/root/.ssh` for private repositories.
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
 -e GIT_REPO="https://github.com/yurinnick/tow-nginx" \
-tow build -t tow-nginx
+yurinnick/tow build -t tow-nginx
 ```
 
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
 -e GIT_REPO="https://github.com/yurinnick/tow-nginx" \
 -e GIT_BRANCH="dev" \
-tow build -t tow-nginx
+yurinnick/tow build -t tow-nginx
 ```
