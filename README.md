@@ -8,13 +8,13 @@ Tow provides a docker image for working on distros like [CoreOS](https://coreos.
 Pull the image from the docker index. This is the recommended method of installation as it is easier to update image.
 
 ```
-docker pull yurinnick/tow
+docker pull towproject/tow
 ```
 
 Alternately you can build the image locally.
 
 ```
-git clone https://github.com/yurinnick/tow-docker
+git clone https://github.com/docker-tow/tow-docker
 cd tow-docker
 docker build -t "$USER/tow" .
 ```
@@ -31,7 +31,7 @@ Mount project directory into `/workspace` volume and run required action:
 
 ```
 $ docker run -v /var/run/docker.sock:/var/run/docker.sock \
--v $(pwd):/workspace yurinnick/tow <parameters>
+-v $(pwd):/workspace towproject/tow <parameters>
 ```
 
 #### Remote projects
@@ -42,13 +42,13 @@ Remember to mount volume with ssh keys to `/root/.ssh` for private repositories.
 
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
--e GIT_REPO="https://github.com/yurinnick/tow-nginx" \
-yurinnick/tow build -t tow-nginx
+-e GIT_REPO="https://github.com/docker-tow/tow-nginx" \
+towproject/tow build -t tow-nginx
 ```
 
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock \
--e GIT_REPO="https://github.com/yurinnick/tow-nginx" \
+-e GIT_REPO="https://github.com/docker-tow/tow-nginx" \
 -e GIT_BRANCH="dev" \
-yurinnick/tow build -t tow-nginx
+towproject/tow build -t tow-nginx
 ```
