@@ -1,6 +1,9 @@
 Tow Docker Image
 ================
 
+[![Docker Build Status](http://hubstatus.container42.com/towproject/tow)](https://registry.hub.docker.com/u/towproject/tow)
+
+
 Tow provides a docker image for working on distros like [CoreOS](https://coreos.com).
 
 ## Installation
