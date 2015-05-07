@@ -2,6 +2,8 @@ Tow Docker Image
 ================
 
 [![Docker Build Status](http://hubstatus.container42.com/towproject/tow)](https://registry.hub.docker.com/u/towproject/tow)
+[![Layers Info](https://badge.imagelayers.io/towproject/tow.svg)](https://imagelayers.io/?images=towproject/tow:latest)
+
 
 
 Tow provides a docker image for working on distros like [CoreOS](https://coreos.com).
