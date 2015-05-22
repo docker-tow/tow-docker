@@ -12,4 +12,8 @@ if [ ! -z ${GIT_REPO} ]; then
   cd $(basename ${GIT_REPO})
 fi
 
+dirname `docker inspect --format '{{ index .Volumes "/workspace" }}' $(hostname)`| xargs mkdir -p
+cp -R `pwd` `docker inspect --format '{{ index .Volumes "/workspace" }}' $(hostname)`
+cd `docker inspect --format '{{ index .Volumes "/workspace" }}' $(hostname)`
+
 tow "$@"
