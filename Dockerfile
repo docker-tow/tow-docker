@@ -12,7 +12,7 @@ RUN curl -sfL "https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSIO
 
 COPY run_tow.sh run_tow.sh
 
-RUN pip install -q --pre -I "tow>=1.0.2a0,<1.0.0" && \
+RUN pip install -q --pre -U "tow>=1.0.0a1,<1.0.0" && \
     chmod +x run_tow.sh
 
 RUN rm -rf /var/cache/apk/*
